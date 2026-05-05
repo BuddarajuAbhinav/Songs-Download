@@ -12,8 +12,9 @@
     <body>
        <center>
          <h1>Other Stuff Downloader</h1>
-         <h2>1.2.1 - Minecraft Update</h2>
+         <h2>1.2.2 - Minecraft + UI Update</h2>
          <hr>
+         <div class="list2">
          <a href="Doraemon BGM.mp3" download="Doraemon BGM.mp3"><button>Doraemon BGM</button></a>
          <a href="Dream Speedrun Music.mp3" download="Dream Speedrun Music.mp3"><button>Dream Speedrun Music</button></a>
          <a href="Dream 4 Hunters Music.mp3" download="Dream 4 Hunters Music.mp3"><button>Dream 4 Hunters</button></a>
@@ -42,6 +43,7 @@
          <a href="Subwoofer Lullaby.mp3" download="Subwoofer Lullaby.mp3"><button>Subwoofer Lullaby</button></a>
          <a href="Sweden.mp3" download="Sweden.mp3"><button>Sweden</button></a>
          <a href="Wet Hands.mp3" download="Wet Hands.mp3"><button>Wet Hands</button></a>
+         </div>
        </center>
        <script src="work.js"></script>
 <style>
@@ -57,6 +59,32 @@ button {
 }
 
 button:hover {
+  background-color: #1b5fbf;
+}
+</style>
+<style>
+.list2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center the column */
+}
+
+.list2 a {
+  width: 250px; /* same width for all buttons */
+  margin: 5px 0;
+}
+
+.list2 button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2d89ef;
+  color: white;
+  cursor: pointer;
+}
+
+.list2 button:hover {
   background-color: #1b5fbf;
 }
 </style>
