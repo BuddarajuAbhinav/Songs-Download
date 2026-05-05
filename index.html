@@ -15,6 +15,7 @@
             <h1>Songs Downloader 1.2.1</h1>
             <h2>Minecraft Update</h2>
             <hr>
+            <div class="list">
             <a href="Mahishmati, Brace Yourself.mp3" download="Mahishmati Brace Yourself.mp3"><button>Mahishmati, Brace Yourself!</button></a>
             <a href="Slowed Brace Yourself.mp3" download="Slowed Brace Yourself.mp3"><button>Slowed Brace Yourself!</button></a>
             <a href="Confession.mp3" download="Confession.mp3"><button>Confession</button></a>
@@ -47,6 +48,7 @@
             <a href="Interval Scene 2.mp3" download="Interval Scene 2.mp3"><button>Baahubali 2 Interval Scene</button></a>
             <a href="Can You Ever Forgive Me.mp3" download="Can You Ever Forgive Me.mp3"><button>Can You Ever Forgive Me</button></a>
             <a href="index2.html"><button>2</button></a>
+            </div>
         </center>
         <script src="work.js"></script>
 <style>
@@ -62,6 +64,32 @@ button {
 }
 
 button:hover {
+  background-color: #1b5fbf;
+}
+</style>
+<style>
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center the column */
+}
+
+.list a {
+  width: 250px; /* same width for all buttons */
+  margin: 5px 0;
+}
+
+.list button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2d89ef;
+  color: white;
+  cursor: pointer;
+}
+
+.list button:hover {
   background-color: #1b5fbf;
 }
 </style>
