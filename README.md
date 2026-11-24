@@ -1,40 +1,46 @@
-# Songs Downloader 1.3
+# Songs Downloader 1.3.1
 
-A dark, responsive, download-first media library for GitHub Pages. This release merges the collections from the old `index.html` and `index2.html` pages into one searchable library.
+A download-first media library with a regular desktop/mobile interface and a separate ultra-light page for the JioBharat V4.
 
-## Files
+## Project files
 
-- `index.html` — page structure and controls
-- `style.css` — responsive dark interface
-- `songs.js` — catalogue of media files
+- `index.html` — regular searchable library
+- `style.css` — regular dark interface
+- `songs.js` — catalogue of 166 media entries (113 MP3 audio files and 53 MP4 videos)
 - `app.js` — search, filters, sorting, downloads and saved favourites
+- `jiobharat.html` — standalone compact edition for a small-screen feature phone; no JavaScript, external fonts, images or separate stylesheet
 
-## Install in the existing repository
+## Install in the existing GitHub repository
 
-1. Keep all existing media files in the repository root (the same level as `index.html`).
-2. Replace the old `index.html` with this new `index.html`.
-3. Add `style.css`, `songs.js` and `app.js` beside `index.html`.
-4. Commit the changes to the branch used by GitHub Pages.
-5. Open the published site and test several downloads, including filenames with spaces, commas and apostrophes.
+1. Keep all existing MP3 and MP4 media files in the repository root, at the same level as `index.html`.
+2. Upload/replace `index.html`, `style.css`, `songs.js` and `app.js` with the files from this project.
+3. Add `jiobharat.html` to the same repository root.
+4. Do not rename the media files. The catalogue uses their exact existing filenames.
+5. Commit the changes to the branch used by GitHub Pages.
+6. Open the regular page on a computer, or open `jiobharat.html` directly on the JioBharat V4.
 
-The old `index2.html`, `stuff.css` and `work.js` are no longer needed by the new page. You can keep them for rollback, or remove them after confirming version 1.3 works.
+The phone edition is available at `https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/jiobharat.html` after GitHub Pages is published. Replace the placeholders with your actual GitHub Pages address.
 
-## Adding a file
+## JioBharat V4 notes
 
-Upload the media file to the repository root, then add an entry to `window.SONGS` in `songs.js`:
+The V4 edition is a plain HTML page with compact text links grouped by category. It deliberately avoids JavaScript, external libraries, Google Fonts, animations, and modern layout features. Each link uses the ordinary media-file URL plus the HTML `download` attribute. Older browsers may ignore that attribute and open the media file instead; in that case, use the browser's Save/Download option if it provides one.
+
+The V4's browser availability and download handling should be tested on the actual handset. Product listings are inconsistent about whether a web browser is available and which browser is included. The page itself cannot make a missing browser available.
+
+## Adding a media file
+
+Upload the new media file to the repository root and add an entry to `window.SONGS` in `songs.js`:
 
 ```js
 { title: "Display name", file: "Exact filename.mp3", category: "Gaming & OST", legacyFavorite: false }
 ```
 
-`file` must match the uploaded filename exactly. Supported types in this release are `.mp3` audio and `.mp4` video. Other extensions are currently treated as audio for display; update `fileType()` in `app.js` if you add other formats.
+Then regenerate the static links in `jiobharat.html` so the V4 edition also includes it. Supported formats in this release are `.mp3` audio and `.mp4` video.
 
 ## Favourites
 
-Items marked with the old `fav` / `fav2` class have been migrated as initial favourites. Users can change favourites in the browser; selections are stored in that browser's `localStorage`.
+The regular edition stores user favourites in that browser's `localStorage`. The V4 edition is intentionally read-only and omits favourites, search and sorting to reduce compatibility requirements.
 
-## Publishing and rights
+## Media and publishing
 
-Only publish media that you own or have permission to distribute. A public GitHub repository and GitHub Pages site make repository files accessible to visitors.
-
-The existing `why.html` file is left untouched and linked from the new footer. The old external source-site buttons are not reproduced in the new library interface; they can be added back in a dedicated resources section if you want them.
+The ZIP contains website code, not the media files. Keep your existing MP3/MP4 files in the repository. Only publish media that you own or have permission to distribute.
